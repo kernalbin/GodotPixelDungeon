@@ -17,12 +17,12 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "Walker",
 "language": "GDScript",
-"path": "res://Walker.gd"
+"path": "res://world/Walker.gd"
 }, {
 "base": "Node",
 "class": "WorldMap",
 "language": "GDScript",
-"path": "res://WorldMap.gd"
+"path": "res://world/WorldMap.gd"
 } ]
 _global_script_class_icons={
 "GitAPI": "",
@@ -33,8 +33,8 @@ _global_script_class_icons={
 [application]
 
 config/name="GodotPixelDungeon"
-run/main_scene="res://World.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://world/World.tscn"
+config/icon="res://assets/icon.png"
 
 [gdnative]
 
