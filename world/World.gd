@@ -1,6 +1,6 @@
 extends Node2D
 
-var borders = Rect2(9, 9, 112, 112)
+var borders = Rect2(4, 4, 117, 117)
 
 onready var tileMap = $TileMap
 onready var tileMapOccluder = $TilemapOccluder
@@ -18,7 +18,7 @@ func _input(event):
 
 func generate_level():
 	var walker = Walker.new(Vector2(56, 56), borders)
-	var map = walker.walk(500)
+	var map = walker.walk(800)
 	
 	var player = Player.instance()
 	add_child(player)

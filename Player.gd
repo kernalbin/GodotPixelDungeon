@@ -4,6 +4,10 @@ export var _player_speed = 200
 
 onready var camera = $Camera2D
 
+func _input(event):
+	if Input.is_action_just_pressed("ui_cancel"):
+		get_tree().quit()
+
 func _physics_process(_delta):
 	var x_input = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	var y_input = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
