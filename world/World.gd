@@ -7,6 +7,7 @@ onready var tileMapOccluder = $TilemapOccluder
 export(PackedScene) var Player
 export(PackedScene) var Enemy
 export(float) var _enemy_spawn_chance
+var map: WorldMap
 
 func _ready():
 	randomize()
@@ -18,7 +19,7 @@ func _input(event):
 
 func generate_level():
 	var walker = Walker.new(Vector2(56, 56), borders)
-	var map = walker.walk(800)
+	map = walker.walk(800)
 	
 	var player = Player.instance()
 	add_child(player)

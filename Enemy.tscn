@@ -7,6 +7,8 @@
 radius = 15.0
 
 [node name="Enemy" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 3
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -23,9 +25,10 @@ collide_with_areas = true
 [node name="FollowCooldown" type="Timer" parent="."]
 
 [node name="PathChange" type="Timer" parent="."]
-one_shot = true
 autostart = true
 
-[node name="Navigation2D" type="Navigation2D" parent="."]
+[node name="InterestCast" type="RayCast2D" parent="."]
+enabled = true
+collide_with_areas = true
 
 [connection signal="timeout" from="PathChange" to="." method="_on_PathChange_timeout"]

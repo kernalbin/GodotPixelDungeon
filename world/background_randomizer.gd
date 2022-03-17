@@ -7,8 +7,8 @@ onready var _rect = tile_set.tile_get_region(_id)
 
 
 func _ready():
-	for x in _borders.size.x:
-		for y in _borders.size.y:
+	for x in range(_borders.size.x+20):
+		for y in range(_borders.size.y+20):
 			if randf() <= .3:
 				set_cell(x, y, _id, false, false, false, _get_subtile_coord(_tiles, _rect, _id))
 			else:
