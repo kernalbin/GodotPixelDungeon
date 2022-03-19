@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
+[ext_resource path="res://assets/light.png" type="Texture" id=1]
 [ext_resource path="res://Enemy.gd" type="Script" id=2]
 [ext_resource path="res://assets/SplatPack/Default (256px)/splat12.png" type="Texture" id=13]
 [ext_resource path="res://assets/SplatPack/Default (256px)/splat08.png" type="Texture" id=14]
@@ -69,9 +70,6 @@ animations = [ {
 collision_layer = 2
 collision_mask = 3
 script = ExtResource( 2 )
-speed = null
-friction = null
-acceleration = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -88,10 +86,6 @@ script = ExtResource( 38 )
 [node name="PathChange" type="Timer" parent="."]
 autostart = true
 
-[node name="SeePlayer" type="Timer" parent="."]
-wait_time = 0.5
-one_shot = true
-
 [node name="InterestCast" type="RayCast2D" parent="."]
 enabled = true
 collide_with_areas = true
@@ -99,5 +93,10 @@ collide_with_areas = true
 [node name="PlayerCast" type="RayCast2D" parent="."]
 enabled = true
 
+[node name="AlertedLight" type="Light2D" parent="."]
+texture = ExtResource( 1 )
+texture_scale = 0.15
+color = Color( 1, 0.411765, 0.411765, 1 )
+energy = 0.9
+
 [connection signal="timeout" from="PathChange" to="." method="_on_PathChange_timeout"]
-[connection signal="timeout" from="SeePlayer" to="." method="_on_SeePlayer_timeout"]
